@@ -1,33 +1,35 @@
-# German Traffic Sign Recognition (CNN)
+# 🚦 Traffic Sign Recognition System
 
-## Overview
-A Deep Learning project that classifies images of traffic signs into 43 distinct categories using a Convolutional Neural Network (CNN). This model is trained on the GTSRB (German Traffic Sign Recognition Benchmark) dataset.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 
-## Dataset
-- **Source:** [GTSRB - German Traffic Sign Recognition Benchmark](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign)
-- **Classes:** 43 types of traffic signs (e.g., Stop, Speed Limit, Yield).
-- **Structure:** `Train` folder (images sorted by class) and `Test.csv` (metadata for testing).
+An end-to-end Deep Learning application that classifies 43 categories of traffic signs using a Convolutional Neural Network (CNN). This project features a web-based dashboard for real-time image inference.
 
-## Model Architecture
-- **Framework:** TensorFlow / Keras
-- **Type:** Sequential CNN
-- **Layers:**
-  - 2x Conv2D (32 filters) + MaxPool + Dropout
-  - 2x Conv2D (64 filters) + MaxPool + Dropout
-  - Dense (Fully Connected) Layer (256 units)
-  - Output Layer (Softmax activation, 43 units)
+## 🚀 Project Overview
+This project addresses the challenge of autonomous vehicle perception by identifying traffic signs from the **German Traffic Sign Recognition Benchmark (GTSRB)**. I moved beyond a simple Jupyter Notebook to build a deployable application that handles image preprocessing and model prediction in a unified pipeline.
 
-## Performance
-- **Training Accuracy:** ~95%+
-- **Test Set Accuracy:** Evaluated on unseen data from `Test.csv`.
 
-## Technologies Used
-- TensorFlow & Keras
-- OpenCV / PIL (Image Processing)
-- Scikit-Learn (Train/Test Split)
-- Matplotlib (Performance plotting)
 
-## Usage
-1. Run the notebook to download the dataset via `kagglehub`.
-2. The model trains for 10 epochs and saves as `traffic_classifier.h5`.
-3. The script outputs a final accuracy score on the test set.
+[Image of a Convolutional Neural Network architecture for image classification]
+
+
+## 🧠 Model Architecture
+The model uses a multi-layer CNN designed to extract hierarchical spatial features:
+* **Convolutional Layers:** Four `Conv2D` layers with ReLU activation for feature detection.
+* **Pooling:** `MaxPool2D` layers for spatial variance reduction.
+* **Regularization:** `Dropout` layers (0.25 and 0.5) to improve model robustness and prevent overfitting.
+* **Output:** A `Dense` layer with a **Softmax** activation function to output probabilities for 43 classes.
+
+## 🛠️ Installation & Usage
+
+1. Clone the Repository
+```bash
+git clone [https://github.com/Traffic-Sign-Recognition.git](https://github.com/Muqeet04/YTraffic-Sign-Recognition.git)
+cd Traffic-Sign-Recognition
+
+2. Install Dependencies
+pip install streamlit tensorflow-cpu pillow numpy
+
+3. Run the App
+streamlit run app.py
